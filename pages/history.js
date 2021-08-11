@@ -116,7 +116,7 @@ export default function Home({ subscription }) {
       <div class="w-auto h-">
         <img class="flex-1 h-full rounded-lg" src="https://bscscan.com/token/images/pancakebunny_32.png" />
       </div>
-      <div class="w-2/3">
+      <div class="w-2/3 space-y-1">
         <p class="w-full text-2xl font-semibold text-white">Bunny Token</p>
         <p class="w-full text-1xl font-semibold text-white">BUNNY</p>
         <p class="w-full pb-8 text-sm tracking-wide leading-tight text-white">The card layouts can vary to support the types of content they contain.</p>
