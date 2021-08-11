@@ -188,9 +188,9 @@ export default function Home({ subscription }) {
                       </div>
                     )}
 
-                    {pump.swap && (
+                    {pump.chart && (
                       <div className="p-4 md:p-8 md:text-xl content">
-                        <ReactMarkdown children={pump.swap} />
+                        <ReactMarkdown children={pump.chart} />
                       </div>
                     )}
 
