@@ -12,7 +12,7 @@ export async function getServerSideProps() {
         holas: allHolas(first: $limit, orderBy:_firstPublishedAt_DESC) {
           id
           titulo
-          content
+          
           _firstPublishedAt
           photos {
             responsiveImage(imgixParams: {auto: [format]}) {
@@ -168,11 +168,7 @@ export default function Home({ subscription }) {
 
 
 
-                    {hola.content && (
-                      <div className="p-4 md:p-8 md:text-xl content">
-                        <ReactMarkdown children={hola.content} />
-                      </div>
-                    )}
+                    
                   </div>
                   <div className="mt-4 grid grid-cols-2 text-xs md:text-sm text-gray-500 md:px-8 items-center pb-12">
                     <div className="flex items-center">
