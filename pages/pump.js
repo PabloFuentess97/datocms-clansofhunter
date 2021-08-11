@@ -9,12 +9,16 @@ export async function getServerSideProps() {
   const graphqlRequest = {
     query: `
       query HomePage($limit: IntType) {
-        pumps: allPumps(first: $limit, orderBy:_firstPublishedAt_DESC) {
+        holas: allHolas(first: $limit, orderBy:_firstPublishedAt_DESC) {
           id
-          name
-
+          titulo
+          content
           _firstPublishedAt
-          
+          photos {
+            responsiveImage(imgixParams: {auto: [format]}) {
+              ...imageFields
+            }
+          }
           author {
             name
             avatar {
@@ -26,7 +30,17 @@ export async function getServerSideProps() {
         }
       }
 
-      
+      fragment imageFields on ResponsiveImage {
+        aspectRatio
+        base64
+        height
+        sizes
+        src
+        srcSet
+        width
+        alt
+        title
+      }
     `,
     variables: { limit: 10 },
   };
@@ -124,9 +138,9 @@ export default function Home({ subscription }) {
       <div className="max-w-screen-sm mx-auto my-12">
         {data && (
           <TransitionGroup>
-            {data.pumps.map((pump) => (
+            {data.holas.map((hola) => (
               <CSSTransition
-                key={pump.id}
+                key={hola.id}
                 classNames={{
                   enter: "post-enter",
                   enterActive: "post-enter-active",
@@ -137,27 +151,39 @@ export default function Home({ subscription }) {
               >
                 <div>
                   <div className="shadow-xl rounded-lg overflow-hidden bg-white">
+                    {hola.photos.map((photo) => (
+                      <Image
+                        key={photo.responsiveImage.src}
+                        className="w-full"
+                        data={photo.responsiveImage}
+                      />
+                    ))}
+
                     
-                    
-                    {pump.name && (
+                    {hola.titulo && (
                       <div className="p-4 md:p-8 md:text-xl content">
-                        <ReactMarkdown children={pump.name} />
+                        <ReactMarkdown children={hola.titulo} />
                       </div>
                     )}
 
 
 
+                    {hola.content && (
+                      <div className="p-4 md:p-8 md:text-xl content">
+                        <ReactMarkdown children={hola.content} />
+                      </div>
+                    )}
                   </div>
                   <div className="mt-4 grid grid-cols-2 text-xs md:text-sm text-gray-500 md:px-8 items-center pb-12">
                     <div className="flex items-center">
                       <Image
                         className="w-6 h-6 rounded-full mr-2 shadow"
-                        data={pump.author.avatar.responsiveImage}
+                        data={hola.author.avatar.responsiveImage}
                       />
-                      <div>{pump.author.name}</div>
+                      <div>{hola.author.name}</div>
                     </div>
                     <div className="text-right">
-                      <TimeAgo date={pump._firstPublishedAt} />
+                      <TimeAgo date={hola._firstPublishedAt} />
                     </div>
                   </div>
                 </div>
