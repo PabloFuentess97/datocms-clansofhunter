@@ -1,9 +1,6 @@
-import Head from "next/head";
+
 import { request } from "../lib/datocms";
-import { Image, useQuerySubscription } from "react-datocms";
-import TimeAgo from "react-timeago";
-import ReactMarkdown from "react-markdown";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 
 
 const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
