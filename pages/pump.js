@@ -11,12 +11,13 @@ export async function getServerSideProps() {
       query HomePage($limit: IntType) {
         posts: allPosts(first: $limit, orderBy:_firstPublishedAt_DESC) {
           id
-          content
+          image
+          name
+          symbol
+          direction
+          url_chart
+          url_swap
           _firstPublishedAt
-          photos {
-            responsiveImage(imgixParams: {auto: [format]}) {
-              ...imageFields
-            }
           }
           author {
             name
@@ -29,20 +30,11 @@ export async function getServerSideProps() {
         }
       }
 
-      fragment imageFields on ResponsiveImage {
-        aspectRatio
-        base64
-        height
-        sizes
-        src
-        srcSet
-        width
-        alt
-        title
-      }
+      
     `,
     variables: { limit: 10 },
   };
+
 
   return {
     props: {
@@ -115,32 +107,25 @@ export default function Home({ subscription }) {
 
 
 
-      <div className="max-w-screen-sm mx-auto my-12">
+<div className="max-w-screen-sm mx-auto my-12">
         {data && (
           <TransitionGroup>
-            {data.posts.map((post) => (
+            {data.pumps.map((pump) => (
               <CSSTransition
-                key={post.id}
+                key={pump.id}
                 classNames={{
-                  enter: "post-enter",
-                  enterActive: "post-enter-active",
-                  exit: "post-exit",
-                  exitActive: "post-exit-active",
+                  enter: "pump-enter",
+                  enterActive: "pump-enter-active",
+                  exit: "pump-exit",
+                  exitActive: "pump-exit-active",
                 }}
                 timeout={{ enter: 1200, exit: 1200 }}
               >
                 <div>
                   <div className="shadow-xl rounded-lg overflow-hidden bg-white">
-                    {post.photos.map((photo) => (
-                      <Image
-                        key={photo.responsiveImage.src}
-                        className="w-full"
-                        data={photo.responsiveImage}
-                      />
-                    ))}
-                    {post.content && (
+                    {pump.name && (
                       <div className="p-4 md:p-8 md:text-xl content">
-                        <ReactMarkdown children={post.content} />
+                        <ReactMarkdown children={pump.name} />
                       </div>
                     )}
                   </div>
@@ -148,12 +133,12 @@ export default function Home({ subscription }) {
                     <div className="flex items-center">
                       <Image
                         className="w-6 h-6 rounded-full mr-2 shadow"
-                        data={post.author.avatar.responsiveImage}
+                        data={pump.author.avatar.responsiveImage}
                       />
-                      <div>{post.author.name}</div>
+                      <div>{pump.author.name}</div>
                     </div>
                     <div className="text-right">
-                      <TimeAgo date={post._firstPublishedAt} />
+                      <TimeAgo date={pump._firstPublishedAt} />
                     </div>
                   </div>
                 </div>
