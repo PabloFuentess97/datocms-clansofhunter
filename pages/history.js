@@ -3,14 +3,14 @@ import { request } from "../lib/datocms";
 
 
 
-const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
+const graphqlRequest = `query HomePage($limit: IntType) {
     pruebas(first: $limit) {
       title
     }
   }`;
   export async function getStaticProps() {
     const data = await request({
-      query: HOMEPAGE_QUERY,
+      query: graphqlRequest,
       variables: { limit: 10 }
     });
     return {
