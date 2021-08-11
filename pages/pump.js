@@ -14,6 +14,7 @@ export async function getServerSideProps() {
           image
           name
           symbol
+          decimal
           direction
           url_chart
           url_swap
