@@ -11,6 +11,7 @@ export async function getServerSideProps() {
       query HomePage($limit: IntType) {
         pumps: allPumps(first: $limit, orderBy:_firstPublishedAt_DESC) {
           id
+          asset
           name
           symbol
           
@@ -161,9 +162,9 @@ export default function Home({ subscription }) {
                       />
                     ))}
 
-                    {pump.symbol && (
+                    {pump.asset && (
                       <div className="p-4 md:p-8 md:text-xl content">
-                        <ReactMarkdown children={pump.symbol} />
+                        <ReactMarkdown children={pump.asset} />
                       </div>
                     )}
 
@@ -173,6 +174,11 @@ export default function Home({ subscription }) {
                       </div>
                     )}
 
+                    {pump.symbol && (
+                      <div className="p-4 md:p-8 md:text-xl content">
+                        <ReactMarkdown children={pump.symbol} />
+                      </div>
+                    )}
 
 
                     
