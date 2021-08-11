@@ -111,7 +111,7 @@ export default function Home({ subscription }) {
 
       
       
-<div class="max-w-screen md:w-2/4 mx-auto">
+<div class="max-w-screen md:w-1/4 mx-auto">
     <div class="flex flex-row space-y-2 items-center justify-center h-full py-4 bg-gray-800 rounded-xl space-x-10">
       <div class="w-auto h-">
         <img class="flex-1 h-full rounded-lg" src="https://bscscan.com/token/images/pancakebunny_32.png" />
