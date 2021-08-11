@@ -19,7 +19,7 @@ export async function getServerSideProps() {
           url_chart
           url_swap
           _firstPublishedAt
-          }
+          
           author {
             name
             avatar {
@@ -35,7 +35,6 @@ export async function getServerSideProps() {
     `,
     variables: { limit: 10 },
   };
-
 
   return {
     props: {
@@ -103,36 +102,74 @@ export default function Home({ subscription }) {
 
       
       
+<div class="max-w-screen md:w-1/3 mx-auto">
+    <div class="flex flex-row space-y-2 items-center justify-center h-full py-4 bg-gray-800 rounded-xl space-x-10">
+      <div class="w-auto h-">
+        <img class="flex-1 h-full rounded-lg" src="https://bscscan.com/token/images/pancakebunny_32.png" />
+      </div>
+      <div class="w-2/3 space-y-1">
+        <p class="w-full text-2xl font-semibold text-white">Bunny Token</p>
+        <p class="w-full text-1xl font-semibold text-white">BUNNY</p>
+        <p class="w-full pb-8 text-sm tracking-wide leading-tight text-white">The card layouts can vary to support the types of content they contain.</p>
+        <div class="rounded mr-auto space-y-5">
+          <div class="opacity-95 border rounded-lg border-white px-4">
+            <p class="m-auto inset-0 text-sm font-medium leading-normal text-center text-white py-2">License</p>
+          </div>
+          <div class="opacity-95 border rounded-lg border-white px-4">
+            <p class="m-auto inset-0 text-sm font-medium leading-normal text-center text-white py-2">License</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
 
-
-<div className="max-w-screen-sm mx-auto my-12">
+      <div className="max-w-screen-sm mx-auto my-12">
         {data && (
           <TransitionGroup>
             {data.pumps.map((pump) => (
               <CSSTransition
                 key={pump.id}
                 classNames={{
-                  enter: "pump-enter",
-                  enterActive: "pump-enter-active",
-                  exit: "pump-exit",
-                  exitActive: "pump-exit-active",
+                  enter: "post-enter",
+                  enterActive: "post-enter-active",
+                  exit: "post-exit",
+                  exitActive: "post-exit-active",
                 }}
                 timeout={{ enter: 1200, exit: 1200 }}
               >
                 <div>
                   <div className="shadow-xl rounded-lg overflow-hidden bg-white">
+                    
+
+                    
                     {pump.name && (
                       <div className="p-4 md:p-8 md:text-xl content">
                         <ReactMarkdown children={pump.name} />
                       </div>
                     )}
+
+
+
+                    {pump.symbol && (
+                      <div className="p-4 md:p-8 md:text-xl content">
+                        <ReactMarkdown children={pump.symbol} />
+                      </div>
+                    )}
                   </div>
                   <div className="mt-4 grid grid-cols-2 text-xs md:text-sm text-gray-500 md:px-8 items-center pb-12">
-                    
-                    
+                    <div className="flex items-center">
+                      <Image
+                        className="w-6 h-6 rounded-full mr-2 shadow"
+                        data={pump.author.avatar.responsiveImage}
+                      />
+                      <div>{pump.author.name}</div>
+                    </div>
+                    <div className="text-right">
+                      <TimeAgo date={pump._firstPublishedAt} />
+                    </div>
                   </div>
                 </div>
               </CSSTransition>
