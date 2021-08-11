@@ -13,11 +13,7 @@ export async function getServerSideProps() {
           id
           img_url
           name
-          symbol
-          direction
-          decimal
-          url_swap
-          url_chart
+          
           
           _firstPublishedAt
           photos {
