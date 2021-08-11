@@ -120,7 +120,7 @@ export default function Home({ subscription }) {
         <p class="w-full text-2xl font-semibold text-white">Bunny Token</p>
         <p class="w-full text-1xl font-semibold text-white">BUNNY</p>
         <p class="w-full pb-8 text-sm tracking-wide leading-tight text-white">The card layouts can vary to support the types of content they contain.</p>
-        <div class="rounded mr-auto">
+        <div class="rounded mr-auto space-y-5">
           <div class="opacity-95 border rounded-lg border-white px-4">
             <p class="m-auto inset-0 text-sm font-medium leading-normal text-center text-white py-2">License</p>
           </div>
