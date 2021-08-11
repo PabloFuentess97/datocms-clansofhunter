@@ -116,10 +116,7 @@ export default function Home({ subscription }) {
             <div className="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-10 text-gray-800" style="max-width: 500px">
                 <div className="w-full pt-1 pb-5">
                     
-                      <Image
-                        className="overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg"
-                        src="https://randomuser.me/api/portraits/men/15.jpg"
-                      />
+                      
                 </div>
                 <div className="w-full mb-10">
                     <div className="text-3xl text-indigo-500 text-left leading-tight h-3">“</div>
