@@ -95,7 +95,7 @@ export default function Home({ subscription }) {
 
           
 
-      <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+      
 
 <div class="min-w-screen min-h-screen bg-yellow-500 flex items-center justify-center px-5 py-5" x-data="beer()" x-init="start()">
     <div class="text-yellow-100">
