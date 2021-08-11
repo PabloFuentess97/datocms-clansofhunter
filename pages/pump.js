@@ -9,7 +9,7 @@ export async function getServerSideProps() {
   const graphqlRequest = {
     query: `
       query HomePage($limit: IntType) {
-        posts: allPumps(first: $limit, orderBy:_firstPublishedAt_DESC) {
+        pumps: allPumps(first: $limit, orderBy:_firstPublishedAt_DESC) {
           id
           image
           name
