@@ -143,7 +143,11 @@ export default function Home({ subscription }) {
                 <div>
                   <div className="shadow-xl rounded-lg overflow-hidden bg-white">
                     
-
+                    {pump.image && (
+                        <div className="p-4 md:p-8 md:text-xl content">
+                          <ReactMarkdown children={pump.image} />
+                        </div>
+                    )}
                     
                     {pump.name && (
                       <div className="p-4 md:p-8 md:text-xl content">
@@ -158,6 +162,32 @@ export default function Home({ subscription }) {
                         <ReactMarkdown children={pump.symbol} />
                       </div>
                     )}
+
+                    {pump.decimal && (
+                      <div className="p-4 md:p-8 md:text-xl content">
+                        <ReactMarkdown children={pump.decimal} />
+                      </div>
+                    )}
+
+                    {pump.direction && (
+                      <div className="p-4 md:p-8 md:text-xl content">
+                        <ReactMarkdown children={pump.direction} />
+                      </div>
+                    )}
+
+                    {pump.url_chart && (
+                      <div className="p-4 md:p-8 md:text-xl content">
+                        <ReactMarkdown children={pump.url_chart} />
+                      </div>
+                    )}
+
+                    {pump.url_swap && (
+                      <div className="p-4 md:p-8 md:text-xl content">
+                        <ReactMarkdown children={pump.url_swap} />
+                      </div>
+                    )}
+
+
                   </div>
                   <div className="mt-4 grid grid-cols-2 text-xs md:text-sm text-gray-500 md:px-8 items-center pb-12">
                     <div className="flex items-center">
