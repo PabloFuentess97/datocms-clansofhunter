@@ -111,10 +111,10 @@ export default function Home({ subscription }) {
 
       
       
-      <div class="max-w-screen md:w-3/4 mx-auto"> 
-      <div class="flex flex-row space-y-2 items-center justify-center h-full py-4 bg-gray-800 rounded-xl space-x-10">
-      <div class="w-2/3">
-        <p class="w-full text-2xl font-semibold text-white">We love pixels</p>
+      <div className="max-w-screen md:w-3/4 mx-auto"> 
+      <div className="flex flex-row space-y-2 items-center justify-center h-full py-4 bg-gray-800 rounded-xl space-x-10">
+      <div className="w-2/3">
+        <p className="w-full text-2xl font-semibold text-white">We love pixels</p>
 
       </div>
       </div>
