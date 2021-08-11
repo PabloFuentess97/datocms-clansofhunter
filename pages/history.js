@@ -111,7 +111,26 @@ export default function Home({ subscription }) {
 
       
       
-
+<div className="max-w-screen md:w-3/4 mx-auto">
+    <div className="flex flex-row space-y-2 items-center justify-center h-full py-4 bg-gray-800 rounded-xl space-x-10">
+      <div className="w-auto h-">
+      </div>
+      <div className="w-2/3">
+        <p className="w-full text-2xl font-semibold text-white">Bunny Token</p>
+        <p className="w-full text-1xl font-semibold text-white">BUNNY</p><br>
+        <p className="w-full pb-8 text-sm tracking-wide leading-tight text-white">The card layouts can vary to support the types of content they contain.</p>
+        <div className="rounded mr-auto">
+          <div className="opacity-95 border rounded-lg border-white px-4">
+            <p className="m-auto inset-0 text-sm font-medium leading-normal text-center text-white py-2">License</p>
+          </div><br>
+          <div className="opacity-95 border rounded-lg border-white px-4">
+            <p className="m-auto inset-0 text-sm font-medium leading-normal text-center text-white py-2">License</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
 
 
