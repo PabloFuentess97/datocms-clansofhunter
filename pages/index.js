@@ -108,6 +108,13 @@ export default function Home({ subscription }) {
         </div>
       )}
 
+
+            <h1>hola</h1>
+
+
+
+
+
       <div className="max-w-screen-sm mx-auto my-12">
         {data && (
           <TransitionGroup>
