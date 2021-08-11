@@ -14,6 +14,8 @@ export async function getServerSideProps() {
           asset
           name
           symbol
+          swap
+          chart
           
           
           _firstPublishedAt
@@ -180,6 +182,17 @@ export default function Home({ subscription }) {
                       </div>
                     )}
 
+                    {pump.swap && (
+                      <div className="p-4 md:p-8 md:text-xl content">
+                        <ReactMarkdown children={pump.swap} />
+                      </div>
+                    )}
+
+                    {pump.swap && (
+                      <div className="p-4 md:p-8 md:text-xl content">
+                        <ReactMarkdown children={pump.swap} />
+                      </div>
+                    )}
 
                     
                   </div>
