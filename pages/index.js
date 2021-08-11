@@ -5,6 +5,11 @@ import TimeAgo from "react-timeago";
 import ReactMarkdown from "react-markdown";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
+
+
+import CountDownTimer from './components/CountDownTimer';
+
+
 export async function getServerSideProps() {
   const graphqlRequest = {
     query: `
@@ -94,6 +99,27 @@ export default function Home({ subscription }) {
       </div>
 
           
+
+
+
+      <div className="app-container">
+      <div className="container">
+        <main>
+          <h2>We're launching soon</h2>
+          <CountDownTimer />
+        </main>
+        <SocialLinks />
+        <Attribution />
+      </div>
+    </div>
+
+
+
+
+
+
+
+
       {error && (
         <div className="max-w-screen-sm my-12 mx-auto">
           <h1 className="title-font text-lg font-bold text-gray-900 mb-3">
