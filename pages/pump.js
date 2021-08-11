@@ -11,7 +11,7 @@ export async function getServerSideProps() {
       query HomePage($limit: IntType) {
         holas: allHolas(first: $limit, orderBy:_firstPublishedAt_DESC) {
           id
-          titulo
+          name
           
           _firstPublishedAt
           photos {
@@ -160,9 +160,9 @@ export default function Home({ subscription }) {
                     ))}
 
                     
-                    {hola.titulo && (
+                    {hola.name && (
                       <div className="p-4 md:p-8 md:text-xl content">
-                        <ReactMarkdown children={hola.titulo} />
+                        <ReactMarkdown children={hola.name} />
                       </div>
                     )}
 
