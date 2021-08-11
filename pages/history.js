@@ -11,6 +11,7 @@ export async function getServerSideProps() {
       query HomePage($limit: IntType) {
         holas: allHolas(first: $limit, orderBy:_firstPublishedAt_DESC) {
           id
+          titulo
           content
           _firstPublishedAt
           photos {
@@ -138,6 +139,16 @@ export default function Home({ subscription }) {
                         data={photo.responsiveImage}
                       />
                     ))}
+
+                    
+                    {hola.titulo && (
+                      <div className="p-4 md:p-8 md:text-xl content">
+                        <ReactMarkdown children={hola.titulo} />
+                      </div>
+                    )}
+
+
+
                     {hola.content && (
                       <div className="p-4 md:p-8 md:text-xl content">
                         <ReactMarkdown children={hola.content} />
