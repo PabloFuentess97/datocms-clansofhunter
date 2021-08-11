@@ -130,16 +130,8 @@ export default function Home({ subscription }) {
                     )}
                   </div>
                   <div className="mt-4 grid grid-cols-2 text-xs md:text-sm text-gray-500 md:px-8 items-center pb-12">
-                    <div className="flex items-center">
-                      <Image
-                        className="w-6 h-6 rounded-full mr-2 shadow"
-                        data={pump.author.avatar.responsiveImage}
-                      />
-                      <div>{pump.author.name}</div>
-                    </div>
-                    <div className="text-right">
-                      <TimeAgo date={pump._firstPublishedAt} />
-                    </div>
+                    
+                    
                   </div>
                 </div>
               </CSSTransition>
