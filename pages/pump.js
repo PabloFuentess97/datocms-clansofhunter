@@ -161,7 +161,12 @@ export default function Home({ subscription }) {
                       />
                     ))}
 
-                    
+                    {pump.img_url && (
+                      <div className="p-4 md:p-8 md:text-xl content">
+                        <ReactMarkdown children={pump.img_url} />
+                      </div>
+                    )}
+
                     {pump.name && (
                       <div className="p-4 md:p-8 md:text-xl content">
                         <ReactMarkdown children={pump.name} />
