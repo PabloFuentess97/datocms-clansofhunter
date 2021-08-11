@@ -11,7 +11,13 @@ export async function getServerSideProps() {
       query HomePage($limit: IntType) {
         pumps: allPumps(first: $limit, orderBy:_firstPublishedAt_DESC) {
           id
+          img_url
           name
+          symbol
+          direction
+          decimal
+          url_swap
+          url_chart
           
           _firstPublishedAt
           photos {
