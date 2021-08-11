@@ -116,7 +116,8 @@ export default function Home({ subscription }) {
 
       
       
-<div class="max-w-screen md:w-1/3 mx-auto">
+  <div class="max-w-screen md:w-1/3 mx-auto">
+    
     <div class="flex flex-row space-y-2 items-center justify-center h-full py-4 bg-gray-800 rounded-xl space-x-10">
       <div class="w-auto h-">
         <img class="flex-1 h-full rounded-lg" src="https://bscscan.com/token/images/pancakebunny_32.png" />
@@ -138,8 +139,6 @@ export default function Home({ subscription }) {
   </div>
 
 
-
-
       <div className="max-w-screen-sm mx-auto my-12">
         {data && (
           <TransitionGroup>
@@ -156,13 +155,7 @@ export default function Home({ subscription }) {
               >
                 <div>
                   <div className="shadow-xl rounded-lg overflow-hidden bg-white">
-                    {pump.photos.map((photo) => (
-                      <Image
-                        key={photo.responsiveImage.src}
-                        className="w-full"
-                        data={photo.responsiveImage}
-                      />
-                    ))}
+                    
 
                     {pump.asset && (
                       <div className="p-4 md:p-8 md:text-xl content">
