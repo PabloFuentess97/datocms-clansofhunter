@@ -9,7 +9,7 @@ export async function getServerSideProps() {
   const graphqlRequest = {
     query: `
       query HomePage($limit: IntType) {
-        holas: allHolas(first: $limit, orderBy:_firstPublishedAt_DESC) {
+        pumps: allPumps(first: $limit, orderBy:_firstPublishedAt_DESC) {
           id
           name
           
@@ -138,9 +138,9 @@ export default function Home({ subscription }) {
       <div className="max-w-screen-sm mx-auto my-12">
         {data && (
           <TransitionGroup>
-            {data.holas.map((hola) => (
+            {data.pumps.map((pump) => (
               <CSSTransition
-                key={hola.id}
+                key={pump.id}
                 classNames={{
                   enter: "post-enter",
                   enterActive: "post-enter-active",
@@ -151,7 +151,7 @@ export default function Home({ subscription }) {
               >
                 <div>
                   <div className="shadow-xl rounded-lg overflow-hidden bg-white">
-                    {hola.photos.map((photo) => (
+                    {pump.photos.map((photo) => (
                       <Image
                         key={photo.responsiveImage.src}
                         className="w-full"
@@ -160,9 +160,9 @@ export default function Home({ subscription }) {
                     ))}
 
                     
-                    {hola.name && (
+                    {pump.name && (
                       <div className="p-4 md:p-8 md:text-xl content">
-                        <ReactMarkdown children={hola.name} />
+                        <ReactMarkdown children={pump.name} />
                       </div>
                     )}
 
@@ -174,12 +174,12 @@ export default function Home({ subscription }) {
                     <div className="flex items-center">
                       <Image
                         className="w-6 h-6 rounded-full mr-2 shadow"
-                        data={hola.author.avatar.responsiveImage}
+                        data={pump.author.avatar.responsiveImage}
                       />
-                      <div>{hola.author.name}</div>
+                      <div>{pump.author.name}</div>
                     </div>
                     <div className="text-right">
-                      <TimeAgo date={hola._firstPublishedAt} />
+                      <TimeAgo date={pump._firstPublishedAt} />
                     </div>
                   </div>
                 </div>
