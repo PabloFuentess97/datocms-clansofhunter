@@ -148,9 +148,9 @@ export default function Home({ subscription }) {
         </div>
         <div class="w-2/3 space-y-1">
             {pump.name && (
-                <ReactMarkdown>
-                    <p class="w-full text-2xl font-semibold text-white">{pump.name}</p>
-                </ReactMarkdown>
+                
+                    <p class="w-full text-2xl font-semibold text-white"><ReactMarkdown>{pump.name}</ReactMarkdown></p>
+                
             )}
             {pump.symbol && (
                 <ReactMarkdown>
