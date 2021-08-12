@@ -11,7 +11,7 @@ export async function getServerSideProps() {
       query HomePage($limit: IntType) {
         pumps: allPumps(first: $limit, orderBy:_firstPublishedAt_DESC) {
           id
-          asset
+          
           name
           symbol
           swap
@@ -159,13 +159,7 @@ export default function Home({ subscription }) {
             
             {pump.symbol && (
                 
-                
-                <ReactMarkdown
-                    className="w-full text-1xl font-semibold text-white"
-                    data="{pump.symbol}" 
-                />
-                        
-                    
+                <p class="w-full text-1xl font-semibold text-white"><ReactMarkdown>{pump.symbol}</ReactMarkdown></p>
                 
             )}
             
