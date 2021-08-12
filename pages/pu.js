@@ -161,9 +161,11 @@ export default function Home({ subscription }) {
                 
                 
                 <ReactMarkdown
-                    ClassName="w-full text-1xl font-semibold text-white">
-                        {pump.symbol}
-                    </ReactMarkdown>
+                    className="w-full text-1xl font-semibold text-white"
+                    data="{pump.symbol}" 
+                />
+                        
+                    
                 
             )}
             
