@@ -140,11 +140,15 @@ export default function Home({ subscription }) {
     <div>
         <div class="flex flex-row space-y-2 items-center justify-center h-full py-4 bg-gray-800 rounded-xl space-x-10">
         <div class="w-auto h-">
-            {pump.asset && (
-                <ReactMarkdown>
-                    <img class="flex-1 h-full rounded-lg" src="{pump.asset}"/>
-                </ReactMarkdown>
-            )}
+            
+
+            {pump.photos.map((photo) => (
+                      <Image
+                        key={photo.responsiveImage.src}
+                        className="flex-1 h-full rounded-lg"
+                        data={photo.responsiveImage}
+                      />
+                    ))}
         </div>
         <div class="w-2/3 space-y-1">
             {pump.name && (
