@@ -156,13 +156,17 @@ export default function Home({ subscription }) {
                     <p class="w-full text-2xl font-semibold text-white"><ReactMarkdown>{pump.name}</ReactMarkdown></p>
                 
             )}
-            <p class="w-full text-1xl font-semibold text-white">
+            
             {pump.symbol && (
                 
-                    <ReactMarkdown>{pump.symbol}</ReactMarkdown>
+                
+                <ReactMarkdown
+                    ClassName="w-full text-1xl font-semibold text-white">
+                        {pump.symbol}
+                    </ReactMarkdown>
                 
             )}
-            </p>
+            
             <p class="w-full pb-8 text-sm tracking-wide leading-tight text-white">The card layouts can vary to support the types of content they contain.</p>
             <div class="rounded mr-auto space-y-5">
             <div class="opacity-95 border rounded-lg border-white px-4">
