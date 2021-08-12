@@ -142,7 +142,7 @@ export default function Home({ subscription }) {
         <div class="w-auto h-">
             {pump.asset && (
                 <ReactMarkdown>
-                    <img class="flex-1 h-full rounded-lg" src={pump.asset}/>
+                    <img class="flex-1 h-full rounded-lg" src="{pump.asset}"/>
                 </ReactMarkdown>
             )}
         </div>
@@ -153,9 +153,9 @@ export default function Home({ subscription }) {
                 
             )}
             {pump.symbol && (
-                <ReactMarkdown>
-                    <p class="w-full text-1xl font-semibold text-white">{pump.symbol}</p>
-                </ReactMarkdown>
+                
+                    <p class="w-full text-1xl font-semibold text-white"><ReactMarkdown>{pump.symbol}</ReactMarkdown></p>
+                
             )}
             <p class="w-full pb-8 text-sm tracking-wide leading-tight text-white">The card layouts can vary to support the types of content they contain.</p>
             <div class="rounded mr-auto space-y-5">
