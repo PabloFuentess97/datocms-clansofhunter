@@ -116,27 +116,7 @@ export default function Home({ subscription }) {
 
       
       
-  <div class="max-w-screen md:w-1/3 mx-auto">
-
-    <div class="flex flex-row space-y-2 items-center justify-center h-full py-4 bg-gray-800 rounded-xl space-x-10">
-      <div class="w-auto h-">
-        <img class="flex-1 h-full rounded-lg" src="https://bscscan.com/token/images/pancakebunny_32.png" />
-      </div>
-      <div class="w-2/3 space-y-1">
-        <p class="w-full text-2xl font-semibold text-white">Bunny Token</p>
-        <p class="w-full text-1xl font-semibold text-white">BUNNY</p>
-        <p class="w-full pb-8 text-sm tracking-wide leading-tight text-white">The card layouts can vary to support the types of content they contain.</p>
-        <div class="rounded mr-auto space-y-5">
-          <div class="opacity-95 border rounded-lg border-white px-4">
-            <p class="m-auto inset-0 text-sm font-medium leading-normal text-center text-white py-2">License</p>
-          </div>
-          <div class="opacity-95 border rounded-lg border-white px-4">
-            <p class="m-auto inset-0 text-sm font-medium leading-normal text-center text-white py-2">License</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
 
 
