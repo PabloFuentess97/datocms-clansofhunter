@@ -173,6 +173,9 @@ export default function Home({ subscription }) {
                 <p class="m-auto inset-0 text-sm font-medium leading-normal text-center text-white py-2">License</p>
             </div>
             <div class="opacity-95 border rounded-lg border-white px-4">
+            <button class="m-auto inset-0 text-sm font-medium leading-normal text-center text-white py-2" onclick="window.location.href='https://google.com'" name="subject" type="submit" >
+              HTML
+              </button>
                 <p class="m-auto inset-0 text-sm font-medium leading-normal text-center text-white py-2">License</p>
             </div>
             </div>
